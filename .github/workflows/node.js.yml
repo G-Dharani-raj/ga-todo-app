@@ -1,11 +1,9 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Ghub method 1
+name: Ghub Method 1
 
 on:
     push:
         branches: ["main"]
+    # Allos us to run worflow from UI
     workflow_dispatch:
 
 permissions:
@@ -38,6 +36,6 @@ jobs:
             name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}
         steps:
-            - name: Deploy to Github Pages
+            - name: Deploy to Github pages
               id: deployment
               uses: actions/deploy-pages@v1
